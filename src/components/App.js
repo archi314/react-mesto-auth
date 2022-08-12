@@ -35,6 +35,7 @@ function App() {
   const [infoToolTipOpened, setInfoToolTipOpened] = useState(false);
   const [infoToolTipStatus, setInfoToolTipStatus] = useState(false);
   const [authEmail, setAuthEmail] = useState("");
+  const [userLoginData, setUserLoginData] = useState("");
 
   React.useEffect(() => {
     if (loggedIn) {
@@ -145,8 +146,6 @@ function App() {
       })
       .catch((err) => console.log(err));
   }
-
-  const [userLoginData, setUserLoginData] = useState("");
 
   const history = useHistory();
 
@@ -305,6 +304,8 @@ function App() {
           isOpen={infoToolTipOpened}
           onClose={closeAllPopups}
           auth={infoToolTipStatus}
+          authSuccess="Вы успешно зарегистрировались!"
+          authFail="Что-то пошло не так! Попробуйте еще раз."
         />
       </div>
     </CurrentUserContext.Provider>
