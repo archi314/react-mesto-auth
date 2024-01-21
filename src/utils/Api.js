@@ -25,7 +25,7 @@ export class Api {
   /** Загрузка информации о пользователе с сервера. */
 
   getUserInfo() {
-    return fetch("https://nomoreparties.co/v1/cohort-43/users/me", {
+    return fetch(`${this._url}/users/me`, {
       method: "GET",
       headers: this._headers,
     }).then(this._checkResponse);
